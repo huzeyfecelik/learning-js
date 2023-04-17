@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <script>
+      let userInput = 0;
+      let aiInput = 0;
+
+      let userScore = 0;
+      let aiScore = 0;
+      let draw = 0;
+
+      function getRandomInteger() {
+        return Math.floor(Math.random() * 3) + 1;
+      }
+
+      function compareResults() {
+        if (userInput === aiInput) {
+          draw += 1;
+          return "It's a draw!";
+        } else if (userInput === 1 && aiInput === 2) {
+          aiScore += 1;
+          return "Computer wins!";
+        } else if (userInput === 1 && aiInput === 3) {
+          userScore += 1;
+          return "You win!";
+        } else if (userInput === 2 && aiInput === 1) {
+          userScore += 1;
+          return "You win!";
+        } else if (userInput === 2 && aiInput === 3) {
+          aiScore += 1;
+          return "Computer wins!";
+        } else if (userInput === 3 && aiInput === 1) {
+          aiScore += 1;
+          return "Computer wins!";
+        } else if (userInput === 3 && aiInput === 2) {
+          userScore += 1;
+          return "You win!";
+        } else {
+          return "Something is wrong!";
+        }
+      }
+
+      function printResults() {
+        alert(compareResults());
+        document.getElementById("userScore").innerHTML = `You: ${userScore}`;
+        document.getElementById("aiScore").innerHTML = `Computer: ${aiScore}`;
+        document.getElementById("draw").innerHTML = `Draw: ${draw}`;
+      }
+
+      function play(input) {
+        userInput = input;
+        aiInput = getRandomInteger();
+        printResults();
+      }
+    </script>
+
+    <p>Rock Paper Scissors</p>
+    <button
+      onclick="
+      play(1)
+      "
+    >
+      Rock
+    </button>
+    <button
+      onclick="
+      play(2)
+      "
+    >
+      Paper
+    </button>
+    <button
+      onclick="
+      play(3)
+      "
+    >
+      Scissors
+    </button>
+    <p id="userScore"></p>
+    <p id="aiScore"></p>
+    <p id="draw"></p>
+  </body>
+</html>
