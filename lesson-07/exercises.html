@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 7</title>
+  </head>
+  <body>
+    <script>
+      function greet(name) {
+        if (name === undefined) {
+          console.log("Hi there!");
+        } else {
+          console.log(`Hello ${name}!`);
+        }
+      }
+
+      greet();
+      greet("Huzeyfe");
+      greet("Simon");
+
+      function convertToFahrenheit(celsius) {
+        fahrenheit = (celsius * 9) / 5 + 32;
+        console.log(`${fahrenheit}F`);
+      }
+
+      function convertToCelsius(fahrenheit) {
+        celsius = ((fahrenheit - 32) * 5) / 9;
+        console.log(`${celsius}C`);
+      }
+
+      function convertTemperature(degrees, unit) {
+        if (unit === "C") {
+          convertToFahrenheit(degrees);
+        } else if (unit === "F") {
+          convertToCelsius(degrees);
+        } else {
+          console.log("That's not a valid unit!");
+        }
+      }
+      convertToFahrenheit(25);
+      convertToCelsius(86);
+      convertTemperature(25, "C");
+      convertTemperature(86, "F");
+    </script>
+    <h3>7a</h3>
+    <p>Done</p>
+    <h3>7b</h3>
+    <p>Done</p>
+    <h3>7c</h3>
+    <p>Done</p>
+    <h3>7d</h3>
+    <p>Done</p>
+    <h3>7e</h3>
+    <p>Done</p>
+    <h3>7f</h3>
+    <p>Done</p>
+    <h3>7g</h3>
+    <p>Done</p>
+    <h3>7h</h3>
+    <p>Done</p>
+    <h3>7i</h3>
+    <p>Done</p>
+  </body>
+</html>
